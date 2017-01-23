@@ -1,0 +1,174 @@
+\usepackage{amssymb,amsmath,amsthm}
+\usepackage{enumerate}
+\usepackage{fancyhdr}
+\usepackage[left=.75 in, right=.75 in,top=.75 in, bottom=.75 in]{geometry}
+
+\pagestyle{fancy}
+\fancyhf{}
+\renewcommand{\headrulewidth}{0.4pt}
+
+\providecommand{\abs}[1]{\left\vert#1\right\vert}
+\providecommand{\norm}[1]{\left\Vert#1\right\Vert}
+\providecommand{\pnorm}[2]{\left\Vert#1\right\Vert_{L^{#2}}}
+\providecommand{\pnormspace}[3]{\left\Vert#1\right\Vert_{L^{#2}(#3)}}
+\providecommand{\pqnorm}[3]{\left\Vert#1\right\Vert_{L^{#2,#3}}}
+\providecommand{\pqnormspace}[4]{\left\Vert#1\right\VeFrt_{L^{#2,#3}(#4)}}
+\providecommand{\lz}[4]{\left\Vert#1\right\Vert_{L^{#2,#3}\log^{#4}{L}}}
+\providecommand{\lzspace}[5]{\left\Vert#1\rig\ht\Vert_{L^{#2,#3}\log^{#4}{L}(#5)}}
+\providecommand{\wlt}[1]{\pqnorm{#1}{2}{\infty}}
+\providecommand{\Rn}[1]{\mathbb{R}^{#1}}
+\providecommand{\intrn}[1]{\int_{\Rn{n}}#1 \,dx}
+\providecommand{\csubset}{\subset\subset}
+\providecommand{\wnorm}[1]{\lvert \mspace{-1.8mu} \lvert
+\mspace{-1.8mu} \lvert #1 \rvert \mspace{-1.8mu} \rvert
+\mspace{-1.8mu} \rvert_{L^{2,\infty}}}
+
+\providecommand{\br}[1]{\langle #1 \rangle}
+\providecommand{\snorm}[2]{\left\Vert#1\right\Vert_{H^{#2}}}
+\providecommand{\snormspace}[3]{\left\Vert#1\right\Vert_{H^{#2}({#3})}}
+\providecommand{\sd}[1]{\mathcal{D}_{#1}}
+\providecommand{\se}[1]{\mathcal{E}_{#1}}
+\providecommand{\sdb}[1]{\bar{\mathcal{D}}_{#1}}
+\providecommand{\seb}[1]{\bar{\mathcal{E}}_{#1}}
+\providecommand{\snorm}[2]{\left\Vert#1\right\Vert_{H^{#2}}}
+\providecommand{\snormspace}[3]{\left\Vert#1\right\Vert_{H^{#2}({#3})}}
+\providecommand{\ns}[1]{\norm{#1}^2}
+\providecommand{\pns}[2]{\norm{#1}^2_{L^{#2}}}
+\providecommand{\dbm}[1]{\bar{D}_m^{#1}}
+\providecommand{\ip}[2]{\left(#1,#2\right)}
+\providecommand{\iph}[3]{\left(#1,#2\right)_{\mathcal{H}^{#3}}}
+\providecommand{\hn}[2]{\norm{#1}_{\mathcal{H}^{#2}}}
+
+
+
+\def\wstar{\overset{*}{\rightharpoonup}}
+\def\nab{\nabla}
+\def\dt{\partial_t}
+\def\hal{\frac{1}{2}}
+\def\ep{\varepsilon}
+\def\vchi{\text{\large{$\chi$}}}
+\def\ls{\lesssim}
+\def\p{\partial}
+\def\pa{\partial^\alpha}
+\def\sg{\mathbb{D}}
+\def\db{\bar{D}}
+\def\da{\Delta_{\mathcal{A}}}
+\def\naba{\nab_{\mathcal{A}}}
+\def\diva{\diverge_{\mathcal{A}}}
+\def\Sa{S_{\mathcal{A}}}
+\def\Hsig{{_0}H^1_\sigma(\Omega)}
+\def\H1{{_0}H^1(\Omega)}
+
+\def\F{\mathcal{F}}
+
+\def\a{\mathcal{A}}
+\def\f{\mathcal{F}_{2N}}
+\def\F{\mathbb{F}}
+\def\g{\mathcal{G}_{2N}}
+\def\h{\mathcal{H}}
+\def\i{\mathcal{I}}
+\def\il{\i_{\lambda}}
+\def\k{\mathcal{K}}
+\def\n{\mathcal{N}}
+\def\N{\mathbb{N}}
+\def\P{\mathbb{P}}
+\def\Q{\mathbb{Q}}
+\def\R{\mathbb{R}}
+\def\w{\mathcal{W}}
+\def\x{\mathcal{X}}
+\def\y{\mathcal{Y}}
+\def\z{\mathcal{Z}}
+\def\Z{\mathbb{Z}}
+\def\cf{\mathbb{C}(\F)}
+
+\def\st{\;\vert\;}
+
+%avg integral
+\def\Xint#1{\mathchoice
+{\XXint\displaystyle\textstyle{#1}}%
+{\XXint\textstyle\scriptstyle{#1}}%
+{\XXint\scriptstyle\scriptscriptstyle{#1}}%
+{\XXint\scriptscriptstyle\scriptscriptstyle{#1}}%
+\!\int}
+\def\XXint#1#2#3{{\setbox0=\hbox{$#1{#2#3}{\int}$ }
+\vcenter{\hbox{$#2#3$ }}\kern-.6\wd0}}
+\def\intbar{\Xint-}
+
+%upper and lower ints
+\def\uint{\mathchoice%
+    {\mkern13mu\overline{\vphantom{\intop}\mkern7mu}\mkern-20mu}%
+    {\mkern7mu\overline{\vphantom{\intop}\mkern7mu}\mkern-14mu}%
+    {\mkern7mu\overline{\vphantom{\intop}\mkern7mu}\mkern-14mu}%
+    {\mkern7mu\overline{\vphantom{\intop}\mkern7mu}\mkern-14mu}%
+  \int}
+\def\lint{\mkern3mu\underline{\vphantom{\intop}\mkern7mu}\mkern-10mu\int}
+
+
+\def\L{\mathcal{L}}
+
+\DeclareMathOperator{\curl}{curl}
+\DeclareMathOperator{\adj}{adj}
+\DeclareMathOperator{\tr}{tr}
+\DeclareMathOperator{\diverge}{div}
+\DeclareMathOperator{\supp}{supp}
+\DeclareMathOperator{\dist}{dist}
+\DeclareMathOperator{\card}{card}
+
+\newenvironment{soln}{\paragraph{Solution:}}{\hfill$\square$}
+
+\newtheorem{lem}{Lemma}[section]
+\newtheorem{cor}[lem]{Corollary}
+\newtheorem{prop}[lem]{Proposition}
+\newtheorem{thm}[lem]{Theorem}
+\newtheorem{remark}[lem]{Remark}
+
+\newtheorem*{prop*}{Proposition}
+\newtheorem*{thm*}{Theorem}
+\newtheorem*{lem*}{Lemma}
+\theoremstyle{definition}
+\newtheorem*{def*}{Definition}
+\newtheorem{example}[lem]{Example}
+
+\newcommand{\lecture}[5]{
+   \pagestyle{myheadings}
+   \thispagestyle{plain}
+   \newpage
+   \noindent
+   \begin{center}
+   \framebox{
+      \vbox{\vspace{2mm}
+    \hbox to 6.28in { {\bf #4 \hfill #5} }
+       \vspace{4mm}
+       \hbox to 6.28in { {\Large \hfill Lecture #1: #2  \hfill} }
+       \vspace{2mm}
+       \hbox to 6.28in { {\it Lecturer: #3 \hfill} }
+      \vspace{2mm}}
+   }
+   \end{center}
+   \markboth{Lecture #1: #2}{Lecture #1: #2}
+}
+
+\usepackage{listings}
+\usepackage{inconsolata}
+\usepackage{color}
+
+\definecolor{dkgreen}{rgb}{0,0.6,0}
+\definecolor{gray}{rgb}{0.5,0.5,0.5}
+\definecolor{mauve}{rgb}{0.58,0,0.82}
+
+\lstset{
+  language=Python,
+  aboveskip=3mm,
+  belowskip=3mm,
+  showstringspaces=false,
+  columns=flexible,
+  basicstyle={\small\ttfamily},
+  numbers=none,
+  numberstyle=\tiny\color{gray},
+  keywordstyle=\color{blue},
+  commentstyle=\color{dkgreen},
+  stringstyle=\color{mauve},
+  breaklines=true,
+  breakatwhitespace=true,
+  tabsize=3
+}
