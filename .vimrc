@@ -43,8 +43,9 @@ inoremap jk <esc>
 
 " Settings by Filetype                                                              
 autocmd Filetype html setlocal ts=2 sw=2 sts=2 expandtab                            
-autocmd Filetype c setlocal ts=2 sw=2 sts=2 expandtab                               
+autocmd Filetype css setlocal ts=2 sw=2 sts=2 expandtab                               
 autocmd Filetype sml setlocal ts=2 sw=2 sts=2 expandtab    
+autocmd Filetype c setlocal ts=2 sw=2 sts=2 expandtab                               
 
 " Plugins
 Plugin 'mattn/emmet-vim'
